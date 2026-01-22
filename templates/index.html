@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard - Universal ERI{% endblock %}
+
+{% block content %}
+<div class="animate-fade-in">
+    <h1 style="margin-bottom: 1rem;">Xush kelibsiz, {{ user }}!</h1>
+    <p style="color: var(--text-muted);">Sizning raqamli kalitlaringiz boshqaruv paneli.</p>
+
+    <div class="dashboard-grid">
+        <a href="/keys" class="stat-card glass"
+            style="text-decoration: none; color: inherit; transition: transform 0.3s;">
+            <i class="fas fa-key" style="font-size: 2rem; color: var(--primary-color); margin-bottom: 10px;"></i>
+            <h3>Faol Kalitlar</h3>
+            <span class="stat-value">{{ active_keys }}</span>
+        </a>
+        <div class="stat-card glass">
+            <i class="fas fa-shield-alt"
+                style="font-size: 2rem; color: var(--secondary-color); margin-bottom: 10px;"></i>
+            <h3>Xavfsizlik Darajasi</h3>
+            <span class="stat-value" style="color: #4ade80;">A+</span>
+        </div>
+        <div class="stat-card glass">
+            <i class="fas fa-history" style="font-size: 2rem; color: #f472b6; margin-bottom: 10px;"></i>
+            <h3>Oxirgi Kirish</h3>
+            <span id="last-activity" style="font-size: 1.2rem; margin-top: auto;">Bugun, 09:15</span>
+        </div>
+
+        <div class="action-card glass">
+            <h2 style="margin-bottom: 1rem;">Yangi Universal Kalit (ERI) Yaratish</h2>
+            <p
+                style="margin-bottom: 2rem; color: var(--text-muted); max-width: 600px; margin-left: auto; margin-right: auto;">
+                Barcha xizmatlaringizni bitta xavfsiz faylga jamlang. YouTube, Gmail va boshqa ilovalarga parolsiz
+                kiring.
+            </p>
+            <a href="/create-eri" class="btn btn-primary btn-lg" style="font-size: 1.2rem; padding: 1rem 2.5rem;">
+                <i class="fas fa-plus-circle"></i> ERI Ochish
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
